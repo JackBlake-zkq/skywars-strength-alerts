@@ -1,0 +1,16 @@
+[
+{
+  "modid": "swka",
+  "name": "Sky Wars Kill Alert",
+  "description": "Displays a player's username for about 5 seconds when they get a kill, Do - /swkahelp - for command info",
+  "version": "1.0",
+  "mcversion": "1.8",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["zkq"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
