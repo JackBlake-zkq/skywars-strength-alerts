@@ -68,18 +68,16 @@ public class FileManager {
 	}
 	public static void save() {
 		try {
-		File f = new File("config\\swka.txt");
-        String convert = String.valueOf(alertsEnabled);
-        String converted;
-        if(convert.equals("true")) {
-        	converted = "T";
-        } else {
-        	converted = "F";
-        }
-        FileUtils.writeStringToFile(f, "alertsEnabled=" + converted + " col=" + col + " xPos=" + String.valueOf(xPos) + " yPos=" + String.valueOf(yPos) + " chromaspeed=" + speed);
+			File f = new File("config\\swka.txt");
+	        String converted;
+	        if(alertsEnabled) {
+	        	converted = "T";
+	        } else {
+	        	converted = "F";
+	        }
+	        FileUtils.writeStringToFile(f, "alertsEnabled=" + converted + " col=" + col + " xPos=" + String.valueOf(xPos) + " yPos=" + String.valueOf(yPos) + " chromaspeed=" + speed);
 		} catch (IOException e) {
             e.printStackTrace();
         }
 	}
-	
 }

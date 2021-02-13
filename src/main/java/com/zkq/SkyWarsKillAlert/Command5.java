@@ -36,9 +36,4 @@ public class Command5 extends CommandBase {
 	public String getCommandUsage(ICommandSender icommandsender) {
 	return "swkasetchromaspeed <speed>";
 	}
-	
-	public static double getChromaSpeed() {
-		return chromaSpeed;
-	}
-	
 }

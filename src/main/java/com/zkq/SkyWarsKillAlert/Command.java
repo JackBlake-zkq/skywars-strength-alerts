@@ -39,11 +39,6 @@ public class Command extends CommandBase {
 	@Override
 	public String getCommandUsage(ICommandSender icommandsender) {
 	return "swkatoggle";
-	}
-	
-	public static boolean getStatus() {
-		return status;
-	}
-	
+	}	
 }
 

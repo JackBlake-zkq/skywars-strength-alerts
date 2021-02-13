@@ -40,9 +40,4 @@ public class Command3 extends CommandBase {
 	public String getCommandUsage(ICommandSender icommandsender) {
 	return "swkasetcolor <color hex>";
 	}
-	
-	public static String getColor() {
-		return color;
-	}
-	
 }

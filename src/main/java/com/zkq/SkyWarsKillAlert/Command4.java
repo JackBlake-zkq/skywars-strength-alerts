@@ -46,12 +46,4 @@ public class Command4 extends CommandBase {
 	public String getCommandUsage(ICommandSender icommandsender) {
 	return "swkasetpos <x> <y>";
 	}
-	
-	public static double getX() {
-		return x;
-	}
-	public static double getY() {
-		
-		return y;
-	}
 }

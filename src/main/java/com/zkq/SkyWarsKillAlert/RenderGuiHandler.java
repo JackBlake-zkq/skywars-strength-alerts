@@ -20,7 +20,7 @@ public class RenderGuiHandler {
 	private static int b = 0;
 	
 	@SubscribeEvent
-    public void onRenderTick(TickEvent.RenderTickEvent event) throws NumberFormatException {
+    public void onRenderTick(TickEvent.RenderTickEvent event) {
 		//manage killers
 		if(killers.size() > 0) {
 			renderTickCounter++;
@@ -29,7 +29,7 @@ public class RenderGuiHandler {
 			killers.remove(killers.size()-1);
 		}
 		//render text
-		if(Command.getStatus() == true) {
+		if(FileManager.getAlertsEnabled()) {
 			for(int i = 0; i<killers.size(); i++)
 			{
 				new GuiNotif(Minecraft.getMinecraft(), killers.get(i), i);
@@ -37,7 +37,7 @@ public class RenderGuiHandler {
 		}
 		//manage rgb
 		renderTickCounter2++;
-		if(renderTickCounter2 % ((long)(1 / Command5.getChromaSpeed())) == 0) {
+		if(renderTickCounter2 % ((long)(1 / FileManager.getSpeed())) == 0) {
 			if(r == 255 && g < 255 && b == 0) {
 				g++;
 			}
@@ -63,7 +63,7 @@ public class RenderGuiHandler {
 	@SubscribeEvent
 	 public void onChat(final ClientChatReceivedEvent event) {
 		Message m = new Message(event.message.getUnformattedText()); 
-		if(m.isKill()==true) {
+		if(m.isKill()) {
 				 killers.add(0, m.getPlayer());
 		 }
 	 }

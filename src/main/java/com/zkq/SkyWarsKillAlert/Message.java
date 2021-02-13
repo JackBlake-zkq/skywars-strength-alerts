@@ -34,46 +34,35 @@ public class Message {
 	private String text;
 	private String msg;
 	
-	public Message(String s)
-	{
+	public Message(String s) {
 		text = s;
-		if(this.isKill()==true) {
-			for (String killMsg : killMessages)
-	        {
+		if(this.isKill()) {
+			for (String killMsg : killMessages) {
 	        	if(text.contains(killMsg)) msg = killMsg;
 	        }	
 		}
-		
 	}
 	
-	public boolean isKill()
-	{
-        for (String killMsg : killMessages)
-        {
+	public boolean isKill() {
+        for (String killMsg : killMessages) {
         	if(text.contains(killMsg)) return true;
         }
         return false;
 	}
 	
 	//only will be used if isKill is true
-	public String getPlayer()
-	{
-		if(msg == "became victim #" || msg == "was void victim #" || msg == "was bow kill #")
-		{
+	public String getPlayer() {
+		if(msg.equals("became victim #") || msg.equals("was void victim #") || msg.equals("was bow kill #")) {
 			return text.substring(text.indexOf("of ")+3, text.length()-1);
 		}
-		else if(msg == "slipped on")
-		{
+		else if(msg.equals("slipped on")) {
 			return text.substring(text.indexOf(msg)+msg.length()+1, text.indexOf("banana")-3);
 		}
-		else if(msg == "got WOOF'D by")
-		{
+		else if(msg.equals("got WOOF'D by")) {
 			return text.substring(text.indexOf(msg)+msg.length()+1, text.indexOf("into the void.")-1);
 		}
-		else
-		{
-		return text.substring(text.indexOf(msg)+msg.length()+1, text.length()-1);
+		else {
+			return text.substring(text.indexOf(msg)+msg.length()+1, text.length()-1);
 		}
 	}
-	
 }
